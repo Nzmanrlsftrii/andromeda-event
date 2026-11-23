@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Exhibitions | Andromeda Event Enterprise</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #05163B;
+      --gold: #F5C04E;
+      --soft: #F4F5F8;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+      background: #fff;
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .c {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 46px;
+    }
+
+    /* ==========================================
+       HEADER
+    ========================================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      height: 70px;
+      background: rgba(5, 22, 59, .96);
+    }
+
+    header .in {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 46px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .logo b {
+      display: block;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .logo span {
+      font-size: 13px;
+    }
+
+    nav {
+      display: flex;
+      gap: 36px;
+      font-size: 12.5px;
+      font-weight: 500;
+    }
+
+    nav a {
+      padding: 6px 0;
+      position: relative;
+    }
+
+    nav a.on {
+      font-weight: 700;
+    }
+
+    nav a.on:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .burger {
+      display: none;
+      background: none;
+      border: 0;
+      color: #fff;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* ==========================================
+       BUTTON
+    ========================================== */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 13px;
+      border: 0;
+      border-radius: 99px;
+      padding: 13px 24px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 192, 78, .4);
+    }
+
+    .btn.line {
+      background: none;
+      border: 1px solid var(--navy);
+    }
+
+    /* ==========================================
+       BANNER
+    ========================================== */
+
+    .banner {
+      background: var(--navy);
+      color: #fff;
+      padding: 130px 0 50px;
+    }
+
+    .banner h1 {
+      font-size: 44px;
+      font-weight: 700;
+    }
+
+    .banner h1 em {
+      font-style: normal;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .banner p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: 14px;
+      max-width: 520px;
+    }
+
+    /* ==========================================
+       SECTION
+    ========================================== */
+
+    section.s {
+      padding: 44px 0 20px;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .sub {
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    /* ==========================================
+       UPCOMING EXHIBITION CARDS
+    ========================================== */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .card {
+      display: block;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 3px 14px rgba(5, 22, 59, .12);
+      padding: 0;
+      border: none;
+      transition: .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 22px rgba(5, 22, 59, .16);
+    }
+
+    /* EXHIBITION IMAGE */
+
+    .card .im {
+      position: relative;
+      width: 100%;
+      height: 190px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #e9edf5;
+    }
+
+    /* CATEGORY LABEL */
+
+    .card .bd {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(5, 22, 59, .90);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 7px 12px;
+      border-radius: 5px;
+    }
+
+    /* EXHIBITION INFORMATION */
+
+    .card .b {
+      padding: 17px 18px 20px;
+    }
+
+    .card .meta {
+      font-size: 12px;
+      font-weight: 600;
+      color: #68748d;
+      margin-bottom: 9px;
+    }
+
+    .card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--navy);
+      margin: 0;
+    }
+
+    /* ==========================================
+       INFORMATION PACKAGE
+    ========================================== */
+
+    .paket {
+      margin-top: 40px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 14px;
+      padding: 28px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .paket h3 {
+      font-size: 22px;
+    }
+
+    .paket p {
+      font-size: 13px;
+      line-height: 1.6;
+      margin-top: 6px;
+      max-width: 520px;
+    }
+
+    .harga {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .harga b {
+      display: block;
+      font-size: 30px;
+      color: var(--gold);
+    }
+
+    .harga small {
+      display: block;
+      font-size: 11px;
+      margin-bottom: 12px;
+    }
+
+    #status {
+      display: none;
+      margin-top: 40px;
+      background: #e6f6ea;
+      color: #14532d;
+      border-radius: 10px;
+      padding: 14px 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ==========================================
+       PREVIOUSLY COVERED EXHIBITIONS
+    ========================================== */
+
+    .past {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .ex {
+      border: 1px solid #e3e6ee;
+      border-radius: 12px;
+      padding: 22px 24px;
+    }
+
+    .ex .top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .ex h4 {
+      font-size: 18px;
+    }
+
+    .ex .meta {
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    .ex .desc {
+      font-size: 13px;
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+
+    .stat {
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--soft);
+      border-radius: 99px;
+      padding: 7px 14px;
+      align-self: flex-start;
+    }
+
+    /* BOOTH INFORMATION */
+
+    .stand {
+      margin-top: 16px;
+      background: var(--soft);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+
+    .stand h5 {
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .stand table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    .stand td,
+    .stand th {
+      text-align: left;
+      padding: 7px 6px;
+      border-bottom: 1px solid #dde1ea;
+    }
+
+    .stand .wrap {
+      overflow-x: auto;
+    }
+
+    .lock {
+      text-align: center;
+      padding: 10px 0;
+      font-size: 13px;
+    }
+
+    .lock b {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .lock .btn {
+      margin-top: 12px;
+    }
+
+    /* ==========================================
+       PURCHASE MODAL
+    ========================================== */
+
+    #modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(5, 22, 59, .7);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    #modal.o {
+      display: flex;
+    }
+
+    .box {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .box h3 {
+      font-size: 20px;
+    }
+
+    .box p {
+      font-size: 12px;
+      margin: 6px 0 16px;
+      line-height: 1.5;
+    }
+
+    .box label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .box input,
+    .box select {
+      width: 100%;
+      margin-top: 6px;
+      padding: 11px 12px;
+      font-family: inherit;
+      font-size: 13px;
+      border: 1px solid #d5d9e2;
+      border-radius: 8px;
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 6px 0 16px;
+    }
+
+    .box .acts {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* ==========================================
+       FOOTER
+    ========================================== */
+
+    .ft {
+      background: var(--navy);
+      color: #fff;
+      padding: 20px 0 12px;
+      margin-top: 50px;
+    }
+
+    .ft .r {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .ft .t {
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+
+    .ft .cp {
+      margin-top: 12px;
+      font-size: 10px;
+    }
+
+    /* SOCIAL MEDIA */
+
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .social img {
+      width: 23px;
+      height: 23px;
+      filter: brightness(0) invert(1);
+      transition: .2s;
+    }
+
+    .social img:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================
+       RESPONSIVE TABLET & MOBILE
+    ========================================== */
+
+    @media (max-width: 860px) {
+
+      .c,
+      header .in {
+        padding: 0 22px;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 20px 22px;
+        gap: 18px;
+      }
+
+      nav.o {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      .banner h1 {
+        font-size: 34px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .paket {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .harga {
+        text-align: left;
+      }
+
+      .ft .r {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card .im {
+        height: 210px;
+      }
+
+      .banner h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      .paket {
+        padding: 24px 22px;
+      }
+
+      .box {
+        padding: 22px;
+      }
+
+      .box .acts .btn {
+        justify-content: center;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================
+       HEADER
+  ========================================== -->
+
+  <header>
+    <div class="in">
+
+      <a class="logo" href="index.html">
+        <b>Andromeda</b>
+        <span>Event Enterprise</span>
+      </a>
+
+      <nav id="nv">
+        <a href="index.html">Home</a>
+        <a class="on" href="pameran.html">Exhibitions</a>
+        <a href="layanan.html">Services</a>
+        <a href="tentangkami.html">About Us</a>
+        <a href="kontak.html">Contact</a>
+      </nav>
+
+      <button class="burger" id="bg" aria-label="Menu">☰</button>
+
+    </div>
+  </header>
+
+
+  <!-- ==========================================
+       BANNER
+  ========================================== -->
+
+  <section class="banner">
+    <div class="c">
+
+      <h1>Exhibition <em>List</em></h1>
+
+      <p>
+        Explore upcoming exhibitions and browse our previously covered
+        exhibitions, complete with exhibitor booth information.
+      </p>
+
+    </div>
+  </section>
+
+
+  <div class="c">
+
+    <!-- ==========================================
+         UPCOMING EXHIBITIONS
+    ========================================== -->
+
+    <section class="s" id="mendatang">
+
+      <h2>Upcoming Exhibitions</h2>
+      <p class="sub">Save the dates and don't miss out.</p>
+
+      <div class="cards">
+
+        <!-- CARD 1: JAKARTA PET EXPO -->
+
+        <a class="card" href="pameran.html">
+
+          <div class="im"
+            style="background-image: url('https://assets.zyrosite.com/cdn-cgi/image/format%3Dauto%2Cw%3D768%2Ch%3D539%2Cfit%3Dcrop/AGBb10y7yXizwLO1/jpe-2026-2048x1152-P1rZjxI3IrF3coeg.png');">
+
+            <div class="bd">Pet Exhibition</div>
+
+          </div>
+
+          <div class="b">
+            <div class="meta">Jakarta, 25–28 November 2026</div>
+            <h4>Jakarta Pet Expo 2026</h4>
+          </div>
+
+        </a>
+
+
+        <!-- CARD 2: JAVME -->
+
+        <a class="card" href="pameran.html">
+
+          <div class="im"
+            style="background-image: url('https://c1.10times.com/upload/event/67c6acc6ebedd.jpeg');">
+
+            <div class="bd">Audio & Music Exhibition</div>
+
+          </div>
+
+          <div class="b">
+            <div class="meta">Jakarta, 25–28 November 2026</div>
+            <h4>Jakarta Audio Video & Music Expo 2026</h4>
+          </div>
+
+        </a>
+
+
+        <!-- CARD 3: DEFU EXPO -->
+
+        <a class="card" href="pameran.html">
+
+          <div class="im"
+            style="background-image: url('assets/images/dekorasi.png');">
+
+            <div class="bd">Furniture & Interior Exhibition</div>
+
+          </div>
+
+          <div class="b">
+            <div class="meta">Jakarta, 25–28 November 2026</div>
+            <h4>Decoration & Furniture Expo 2026</h4>
+          </div>
+
+        </a>
+
+
+        <!-- CARD 4: ABC & MOM -->
+
+        <a class="card" href="pameran.html">
+
+          <div class="im"
+            style="background-image: url('assets/images/abc.png');">
+
+            <div class="bd">Furniture & Interior Exhibition</div>
+
+          </div>
+
+          <div class="b">
+            <div class="meta">Jakarta, 25–28 November 2026</div>
+            <h4>ABC & MOM 2026</h4>
+          </div>
+
+        </a>
+
+
+        <!-- CARD 5: INDONESIA HOMELIFE EXPO -->
+
+        <a class="card" href="pameran.html">
+
+          <div class="im"
+            style="background-image: url('assets/images/homelife.png');">
+
+            <div class="bd">Furniture & Interior Exhibition</div>
+
+          </div>
+
+          <div class="b">
+            <div class="meta">Jakarta, 25–28 November 2026</div>
+            <h4>Indonesia Homelife Expo 2026</h4>
+          </div>
+
+        </a>
+
+
+        <!-- CARD 6: AES -->
+
+        <a class="card" href="pameran.html">
+
+          <div class="im"
+            style="background-image: url('assets/images/Appliances.png');">
+
+            <div class="bd">Furniture & Interior Exhibition</div>
+
+          </div>
+
+          <div class="b">
+            <div class="meta">Jakarta, 25–28 November 2026</div>
+            <h4>Appliances & Electronic Show (AES)</h4>
+          </div>
+
+        </a>
+
+
+        <!-- CARD 7: INTEX -->
+
+        <a class="card" href="pameran.html">
+
+          <div class="im"
+            style="background-image: url('assets/images/international.png');">
+
+            <div class="bd">Furniture & Interior Exhibition</div>
+
+          </div>
+
+          <div class="b">
+            <div class="meta">Jakarta, 25–28 November 2026</div>
+            <h4>International Textile Expo (INTEX) 2026</h4>
+          </div>
+
+        </a>
+
+
+        <!-- CARD 8: BDE -->
+
+        <a class="card" href="pameran.html">
+
+          <div class="im"
+            style="background-image: url('assets/images/Building.png');">
+
+            <div class="bd">Furniture & Interior Exhibition</div>
+
+          </div>
+
+          <div class="b">
+            <div class="meta">Jakarta, 25–28 November 2026</div>
+            <h4>Building & Decoration Expo (BDE) Indonesia 2026</h4>
+          </div>
+
+        </a>
+
+      </div>
+
+
+      <!-- ==========================================
+           BOOTH INFORMATION PACKAGE
+      ========================================== -->
+
+      <div class="paket">
+
+        <div>
+
+          <h3>Booth Information Package</h3>
+
+          <p>
+            Access exhibitor lists, booth numbers, business categories,
+            and participant contact details from all exhibitions we have
+            covered. Each package is valid for one purchase.
+          </p>
+
+        </div>
+
+        <div class="harga">
+
+          <b>Rp175,000</b>
+
+          <small>per package</small>
+
+          <button class="btn" onclick="bukaModal()">
+            Buy Package
+          </button>
+
+        </div>
+
+      </div>
+
+      <div id="status">
+        ✓ Package activated. Booth information is now available below.
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         PREVIOUSLY COVERED EXHIBITIONS
+    ========================================== -->
+
+    <section class="s" id="liputan">
+
+      <h2>Previously Covered Exhibitions</h2>
+
+      <p class="sub">
+        Exhibition coverage archive with exhibitor booth information.
+      </p>
+
+      <div class="past" id="past"></div>
+
+    </section>
+
+  </div>
+
+
+  <!-- ==========================================
+       PURCHASE MODAL
+  ========================================== -->
+
+  <div id="modal">
+
+    <div class="box">
+
+      <h3>Purchase Booth Information Package</h3>
+
+      <p>
+        Fill in the following details to continue with the payment process.
+      </p>
+
+      <form id="fb">
+
+        <label>
+          Name
+          <input type="text" id="bn" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" id="be" required>
+        </label>
+
+        <label>
+          Number of Packages
+
+          <select id="bj" onchange="hitung()">
+            <option value="1">1 package</option>
+            <option value="2">2 packages</option>
+            <option value="3">3 packages</option>
+          </select>
+
+        </label>
+
+        <div class="total">
+          <span>Total</span>
+          <span id="tot">Rp175,000</span>
+        </div>
+
+        <div class="acts">
+
+          <button class="btn" type="submit">
+            Continue to Payment
+          </button>
+
+          <button class="btn line" type="button" onclick="tutupModal()">
+            Cancel
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer class="ft">
+
+    <div class="c">
+
+      <div class="r">
+
+        <a class="logo" href="index.html">
+          <b>Andromeda</b>
+          <span>Event Enterprise</span>
+        </a>
+
+      </div>
+
+      <!-- SOCIAL MEDIA -->
+
+      <div class="social">
+
+        <a href="https://www.instagram.com/andromedaevent.id?jplx=MWt6YWlseWszcmE0OA=="
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram Andromeda">
+
+          <img
+            src="https://cdn.simpleicons.org/instagram/ffffff"
+            alt="Instagram">
+
+        </a>
+
+        <a href="https://www.tiktok.com/@andromedaevent.id?_r=1&_t=ZS-9BaInv0zERw"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok Andromeda">
+
+          <img
+            src="https://cdn.simpleicons.org/tiktok/ffffff"
+            alt="TikTok">
+
+        </a>
+
+        <a href="https://youtube.com/@andromedaevententerprise?si=kEUsow9o_UEAG-mK"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube Andromeda">
+
+          <img
+            src="https://cdn.simpleicons.org/youtube/ffffff"
+            alt="YouTube">
+
+        </a>
+
+        <a href="assets/images/qr.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WeChat Andromeda">
+
+          <img
+            src="https://img.icons8.com/ios-filled/50/071b42/weixing.png"
+            alt="WeChat"
+            width="24"
+            height="24">
+
+        </a>
+
+      </div>
+
+      <p class="cp">
+        © 2026 Andromeda Event Enterprise. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ==========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <script>
+
+    // ==========================================
+    // PREVIOUSLY COVERED EXHIBITION DATA
+    // ==========================================
+
+    var PAMERAN = [
+
+      {
+        nama: 'Indonesia Digital Expo 2025',
+        tanggal: '5 – 8 Jun 2025',
+        lokasi: 'ICE BSD, Tangerang',
+        deskripsi: 'An exhibition showcasing digital solutions, startups, and cloud services.',
+
+        stand: [
+          {
+            booth: 'A-01',
+            nama: 'PT Contoh Teknologi',
+            kategori: 'Software',
+            kontak: '0812-0000-0001'
+          },
+          {
+            booth: 'A-02',
+            nama: 'CV Cloud Nusantara',
+            kategori: 'Cloud',
+            kontak: '0812-0000-0002'
+          },
+          {
+            booth: 'B-05',
+            nama: 'Startup Maju Bersama',
+            kategori: 'Fintech',
+            kontak: '0812-0000-0003'
+          }
+        ]
+      },
+
+      {
+        nama: 'Franchise & Business Expo 2025',
+        tanggal: '18 – 21 Sep 2025',
+        lokasi: 'JIExpo Kemayoran, Jakarta',
+        deskripsi: 'An exhibition featuring franchise opportunities and business prospects across various sectors.',
+
+        stand: [
+          {
+            booth: 'C-10',
+            nama: 'Kopi Contoh',
+            kategori: 'Food & Beverage',
+            kontak: '0812-0000-0004'
+          },
+          {
+            booth: 'C-11',
+            nama: 'Laundry Cepat',
+            kategori: 'Services',
+            kontak: '0812-0000-0005'
+          },
+          {
+            booth: 'D-03',
+            nama: 'Toko Retail Kita',
+            kategori: 'Retail',
+            kontak: '0812-0000-0006'
+          }
+        ]
+      },
+
+      {
+        nama: 'Indonesia Food & Beverage Expo 2025',
+        tanggal: '2 – 5 Nov 2025',
+        lokasi: 'Jakarta Convention Center',
+        deskripsi: 'An exhibition featuring food, beverages, and equipment for the food industry.',
+
+        stand: [
+          {
+            booth: 'F-01',
+            nama: 'Snack Nusantara',
+            kategori: 'Food',
+            kontak: '0812-0000-0007'
+          },
+          {
+            booth: 'F-07',
+            nama: 'Teh Premium Contoh',
+            kategori: 'Beverages',
+            kontak: '0812-0000-0008'
+          },
+          {
+            booth: 'G-02',
+            nama: 'Mesin Dapur Pro',
+            kategori: 'Equipment',
+            kontak: '0812-0000-0009'
+          }
+        ]
+      }
+
+    ];
+
+
+    // ==========================================
+    // PRICE AND STORAGE SETTINGS
+    // ==========================================
+
+    var HARGA = 175000;
+
+    var KUNCI = 'andromeda_paket';
+
+
+    function rupiah(n) {
+      return 'Rp' + n.toLocaleString('en-US');
+    }
+
+
+    // ==========================================
+    // CHECK PACKAGE STATUS
+    // ==========================================
+
+    function aktif() {
+
+      try {
+
+        return localStorage.getItem(KUNCI) === '1';
+
+      } catch (e) {
+
+        return window._aktif === true;
+
+      }
+
+    }
+
+
+    // ==========================================
+    // DISPLAY EXHIBITION LIST
+    // ==========================================
+
+    function render() {
+
+      var buka = aktif();
+
+      var html = '';
+
+      PAMERAN.forEach(function (p) {
+
+        var isiStand = '';
+
+        if (buka) {
+
+          var baris = p.stand.map(function (s) {
+
+            return '<tr><td>' + s.booth +
+              '</td><td>' + s.nama +
+              '</td><td>' + s.kategori +
+              '</td><td>' + s.kontak +
+              '</td></tr>';
+
+          }).join('');
+
+
+          isiStand =
+
+            '<h5>Booth Information</h5>' +
+
+            '<div class="wrap">' +
+
+            '<table>' +
+
+            '<tr>' +
+            '<th>Booth</th>' +
+            '<th>Exhibitor</th>' +
+            '<th>Category</th>' +
+            '<th>Contact</th>' +
+            '</tr>' +
+
+            baris +
+
+            '</table>' +
+
+            '</div>';
+
+        } else {
+
+          isiStand =
+
+            '<div class="lock">' +
+
+            '<b>🔒 Booth information is locked</b>' +
+
+            'Purchase the ' + rupiah(HARGA) +
+            ' package to unlock the exhibitor list.' +
+
+            '<br>' +
+
+            '<button class="btn" onclick="bukaModal()">' +
+            'Buy Package' +
+            '</button>' +
+
+            '</div>';
+
+        }
+
+
+        html +=
+
+          '<div class="ex">' +
+
+          '<div class="top">' +
+
+          '<div>' +
+
+          '<h4>' + p.nama + '</h4>' +
+
+          '<div class="meta">' +
+          p.tanggal + ' · ' + p.lokasi +
+          '</div>' +
+
+          '</div>' +
+
+          '<span class="stat">' +
+          p.stand.length + ' booths listed' +
+          '</span>' +
+
+          '</div>' +
+
+          '<p class="desc">' +
+          p.deskripsi +
+          '</p>' +
+
+          '<div class="stand">' +
+          isiStand +
+          '</div>' +
+
+          '</div>';
+
+      });
+
+
+      document.getElementById('past').innerHTML = html;
+
+      document.getElementById('status').style.display =
+        buka ? 'block' : 'none';
+
+    }
+
+
+    // ==========================================
+    // PURCHASE MODAL
+    // ==========================================
+
+    function bukaModal() {
+
+      document.getElementById('modal').classList.add('o');
+
+    }
+
+
+    function tutupModal() {
+
+      document.getElementById('modal').classList.remove('o');
+
+    }
+
+
+    // ==========================================
+    // CALCULATE PURCHASE TOTAL
+    // ==========================================
+
+    function hitung() {
+
+      var j = parseInt(
+        document.getElementById('bj').value,
+        10
+      );
+
+      document.getElementById('tot').textContent =
+        rupiah(HARGA * j);
+
+    }
+
+
+    // ==========================================
+    // PURCHASE PROCESS
+    // ==========================================
+
+    document.getElementById('fb').onsubmit = function (e) {
+
+      e.preventDefault();
+
+      // NOTE:
+      // This purchase process is currently a SIMULATION.
+      // It is not yet connected to a payment gateway.
+
+      try {
+
+        localStorage.setItem(KUNCI, '1');
+
+      } catch (err) {
+
+        window._aktif = true;
+
+      }
+
+      tutupModal();
+
+      render();
+
+      document.getElementById('liputan').scrollIntoView();
+
+    };
+
+
+    // ==========================================
+    // MOBILE MENU
+    // ==========================================
+
+    document.getElementById('bg').onclick = function () {
+
+      document.getElementById('nv').classList.toggle('o');
+
+    };
+
+
+    // Close menu after selecting a navigation link
+
+    document.querySelectorAll('#nv a').forEach(function (link) {
+
+      link.addEventListener('click', function () {
+
+        document.getElementById('nv').classList.remove('o');
+
+      });
+
+    });
+
+
+    // ==========================================
+    // CLOSE MODAL WHEN CLICKING OUTSIDE
+    // ==========================================
+
+    document.getElementById('modal').addEventListener(
+      'click',
+      function (e) {
+
+        if (e.target === this) {
+
+          tutupModal();
+
+        }
+
+      }
+    );
+
+
+    // ==========================================
+    // INITIALIZATION
+    // ==========================================
+
+    render();
+
+  </script>
+
+</body>
+
+</html>

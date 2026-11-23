@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>About Us | Andromeda Event Enterprise</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #05163B;
+      --gold: #F5C04E;
+      --soft: #F4F5F8;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+      background: #fff;
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .c {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 46px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      height: 70px;
+      background: rgba(5, 22, 59, .96);
+    }
+
+    header .in {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 46px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .logo b {
+      display: block;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .logo span {
+      font-size: 13px;
+    }
+
+    nav {
+      display: flex;
+      gap: 36px;
+      font-size: 12.5px;
+      font-weight: 500;
+    }
+
+    nav a {
+      padding: 6px 0;
+      position: relative;
+    }
+
+    nav a.on {
+      font-weight: 700;
+    }
+
+    nav a.on:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .burger {
+      display: none;
+      background: none;
+      border: 0;
+      color: #fff;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* ===== BUTTON ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 13px;
+      border: 0;
+      border-radius: 99px;
+      padding: 13px 24px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 192, 78, .4);
+    }
+
+    /* ===== BANNER ===== */
+    .banner {
+      background: var(--navy);
+      color: #fff;
+      padding: 130px 0 55px;
+    }
+
+    .banner h1 {
+      font-size: 44px;
+      font-weight: 700;
+    }
+
+    .banner h1 em {
+      font-style: normal;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .banner p {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-top: 14px;
+      max-width: 650px;
+      color: rgba(255, 255, 255, .85);
+    }
+
+    /* ===== SECTION ===== */
+    section.s {
+      padding: 46px 0 14px;
+    }
+
+    .num {
+      display: inline-block;
+      background: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      border-radius: 99px;
+      padding: 4px 12px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .sub {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 8px;
+      max-width: 720px;
+    }
+
+    /* ===== ABOUT ANDROMEDA ===== */
+    .intro {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 30px;
+      align-items: center;
+      margin-top: 22px;
+    }
+
+    .intro-text p {
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+
+    .intro-highlight {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .intro-highlight h3 {
+      font-size: 19px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .intro-highlight p {
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* ===== VISION & MISSION ===== */
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .box {
+      border-radius: 12px;
+      padding: 24px;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(5, 22, 59, .12);
+      border-top: 4px solid var(--gold);
+    }
+
+    .box h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .box p,
+    .box li {
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .box ul {
+      padding-left: 18px;
+    }
+
+    .box li {
+      margin-bottom: 5px;
+    }
+
+    /* ===== SERVICES ===== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .card {
+      background: var(--soft);
+      border-radius: 10px;
+      padding: 24px;
+      border-left: 4px solid var(--gold);
+      transition: .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(5, 22, 59, .1);
+    }
+
+    .card .icon {
+      width: 42px;
+      height: 42px;
+      background: var(--navy);
+      color: var(--gold);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .card h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .card a {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 14px;
+      color: #163D81;
+    }
+
+    .card a:hover {
+      color: #B17A08;
+    }
+
+    /* ===== VALUES & ADVANTAGES ===== */
+    .advantages {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .adv {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 12px rgba(5, 22, 59, .1);
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .adv h4 {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .adv p {
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* ===== WORKFLOW ===== */
+    .steps {
+      list-style: none;
+      counter-reset: step;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .steps li {
+      counter-increment: step;
+      background: var(--soft);
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .steps li::before {
+      content: counter(step, decimal-leading-zero);
+      display: block;
+      font-size: 22px;
+      font-weight: 800;
+      color: #B17A08;
+      margin-bottom: 10px;
+    }
+
+    .steps li b {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    /* ===== SOCIAL MEDIA ===== */
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .2s;
+    }
+
+    .social a:hover {
+      transform: translateY(-3px);
+    }
+
+    .social img {
+      width: 25px;
+      height: 25px;
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      margin-top: 50px;
+      background: var(--navy);
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .cta h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 0 auto 18px;
+      max-width: 550px;
+      color: rgba(255, 255, 255, .8);
+    }
+
+    /* ===== FOOTER ===== */
+    .ft {
+      background: var(--navy);
+      color: #fff;
+      padding: 20px 0 12px;
+      border-top: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .ft .r {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
+      gap: 20px;
+    }
+
+    .ft .t {
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+
+    .ft .cp {
+      margin-top: 12px;
+      font-size: 10px;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 860px) {
+
+      .c,
+      header .in {
+        padding: 0 22px;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 20px 22px;
+        gap: 18px;
+      }
+
+      nav.o {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      .banner h1 {
+        font-size: 34px;
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+      }
+
+      .two {
+        grid-template-columns: 1fr;
+      }
+
+      .advantages {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .ft .r {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .advantages {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .banner h1 {
+        font-size: 31px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      .intro-highlight {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="in">
+
+      <a class="logo" href="index.html">
+        <b>Andromeda</b>
+        <span>Event Enterprise</span>
+      </a>
+
+      <nav id="nv">
+        <a href="index.html">Home</a>
+        <a href="pameran.html">Exhibitions</a>
+        <a href="layanan.html">Services</a>
+        <a class="on" href="tentangkami.html">About Us</a>
+        <a href="kontak.html">Contact</a>
+      </nav>
+
+      <button class="burger" id="bg" aria-label="Open menu"
+        aria-expanded="false">☰</button>
+
+    </div>
+  </header>
+
+
+  <!-- ========== BANNER ========== -->
+  <section class="banner">
+    <div class="c">
+
+      <h1>About <em>Us</em></h1>
+
+      <p>
+        Get to know Andromeda Event Enterprise,
+        an exhibition information and publication platform
+        that helps connect exhibitors, products, and business
+        opportunities in one accessible information space.
+      </p>
+
+    </div>
+  </section>
+
+
+  <div class="c">
+
+    <!-- ========== ANDROMEDA PROFILE ========== -->
+    <section class="s" id="profil">
+
+      <span class="num">01</span>
+      <h2>Getting to Know Andromeda</h2>
+
+      <div class="intro">
+
+        <div class="intro-text">
+
+          <p>
+            Andromeda Event Enterprise is here to provide
+            information and expand the publication reach of
+            various exhibition events.
+          </p>
+
+          <p>
+            Through product and exhibitor introductions,
+            we help visitors discover various companies,
+            products, and business opportunities showcased
+            at exhibitions.
+          </p>
+
+          <p>
+            In addition to providing information, Andromeda
+            also offers exhibitor information services and
+            product auction activities through TikTok Live.
+          </p>
+
+        </div>
+
+        <div class="intro-highlight">
+
+          <h3>Connecting Business Opportunities</h3>
+
+          <p>
+            Creating an information space that brings together
+            products, companies, exhibitors, and exhibition
+            visitors to open up opportunities for connections
+            and business collaborations.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========== VISION & MISSION ========== -->
+    <section class="s" id="visimisi">
+
+      <span class="num">02</span>
+      <h2>Vision &amp; Mission</h2>
+
+      <div class="two">
+
+        <div class="box">
+
+          <h3>Vision</h3>
+
+          <p>
+            To become an exhibition information and publication
+            platform that helps connect business owners, products,
+            exhibitors, and visitors through accessible and
+            valuable information.
+          </p>
+
+        </div>
+
+        <div class="box">
+
+          <h3>Mission</h3>
+
+          <ul>
+            <li>Introducing featured products from various exhibition participants.</li>
+            <li>Providing exhibitor profiles and identification information.</li>
+            <li>Making information more accessible to visitors and potential business partners.</li>
+            <li>Providing exhibition publications and product auction activities.</li>
+            <li>Building connections and business opportunities through exhibition information.</li>
+          </ul>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========== MAIN SERVICES ========== -->
+    <section class="s" id="layanan">
+
+      <span class="num">03</span>
+      <h2>What We Do</h2>
+
+      <p class="sub">
+        Andromeda provides several services focused on
+        information, introductions, and publications
+        related to exhibition activities.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="icon">01</div>
+
+          <h4>Exhibition Product Introduction</h4>
+
+          <p>
+            Introducing featured products from exhibition
+            participants through information, documentation,
+            and publications to help them reach a wider audience.
+          </p>
+
+          <a href="layanan.html#produk">
+            Explore Service →
+          </a>
+
+        </div>
+
+        <div class="card">
+
+          <div class="icon">02</div>
+
+          <h4>Exhibitor Introduction</h4>
+
+          <p>
+            Showcasing company profiles, exhibitor identities,
+            business categories, and booth information to help
+            visitors get to know exhibition participants.
+          </p>
+
+          <a href="layanan.html#peserta">
+            Explore Service →
+          </a>
+
+        </div>
+
+        <div class="card">
+
+          <div class="icon">03</div>
+
+          <h4>Exhibitor Information</h4>
+
+          <p>
+            Providing exhibitor information packages from
+            exhibitions we have covered, as a reference for
+            visitors and other parties who need exhibitor data.
+          </p>
+
+          <a href="layanan.html#informasi">
+            Explore Service →
+          </a>
+
+        </div>
+
+        <div class="card">
+
+          <div class="icon">04</div>
+
+          <h4>Exhibition Product Auctions</h4>
+
+          <p>
+            Hosting product auction activities through
+            TikTok Live, allowing audiences to follow
+            the bidding process in real time.
+          </p>
+
+          <a href="layanan.html#lelang">
+            Explore Service →
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========== VALUES & ADVANTAGES ========== -->
+    <section class="s" id="nilai">
+
+      <span class="num">04</span>
+      <h2>Our Core Values</h2>
+
+      <p class="sub">
+        In delivering our services, we prioritize the following
+        values to provide useful and meaningful information.
+      </p>
+
+      <div class="advantages">
+
+        <div class="adv">
+
+          <h4>Information</h4>
+
+          <p>
+            Providing product and exhibitor information
+            that is easy for visitors to understand.
+          </p>
+
+        </div>
+
+        <div class="adv">
+
+          <h4>Publication</h4>
+
+          <p>
+            Helping expand the reach and visibility
+            of products and exhibition companies.
+          </p>
+
+        </div>
+
+        <div class="adv">
+
+          <h4>Connectivity</h4>
+
+          <p>
+            Creating opportunities for visitors,
+            exhibitors, and potential partners to connect.
+          </p>
+
+        </div>
+
+        <div class="adv">
+
+          <h4>Interaction</h4>
+
+          <p>
+            Encouraging interaction through publications
+            and live product auction activities.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========== WORKFLOW ========== -->
+    <section class="s" id="kegiatan">
+
+      <span class="num">05</span>
+      <h2>How We Work</h2>
+
+      <p class="sub">
+        We connect exhibition information with audiences
+        through a process of introduction, publication,
+        and interaction.
+      </p>
+
+      <ol class="steps">
+
+        <li>
+
+          <b>Gathering Information</b>
+
+          Identifying exhibition details, products,
+          companies, and exhibitors to be introduced.
+
+        </li>
+
+        <li>
+
+          <b>Publication and Introduction</b>
+
+          Presenting information through content and
+          documentation to make it accessible to audiences.
+
+        </li>
+
+        <li>
+
+          <b>Building Interaction</b>
+
+          Facilitating access to information and interaction
+          through exhibitor information services and product auctions.
+
+        </li>
+
+      </ol>
+    </section>
+
+
+    <!-- ========== SOCIAL MEDIA ========== -->
+    <section class="s" id="media">
+
+      <h2>Follow Our Social Media</h2>
+
+      <p class="sub">
+        Get the latest updates on exhibitions, products,
+        exhibitors, and publications through the official
+        social media channels of Andromeda Event Enterprise.
+      </p>
+
+      <div class="social">
+
+        <a href="https://www.instagram.com/andromedaevent.id?jplx=MWt6YWlseWszcmE0OA=="
+          target="_blank" rel="noopener noreferrer"
+          aria-label="Andromeda Instagram">
+
+          <img src="https://cdn.simpleicons.org/instagram/05163B"
+            alt="Instagram">
+
+        </a>
+
+        <a href="https://www.tiktok.com/@andromedaevent.id?_r=1&_t=ZS-9BaInv0zERw"
+          target="_blank" rel="noopener noreferrer"
+          aria-label="Andromeda TikTok">
+
+          <img src="https://cdn.simpleicons.org/tiktok/05163B"
+            alt="TikTok">
+
+        </a>
+
+        <a href="https://youtube.com/@andromedaevententerprise?si=kEUsow9o_UEAG-mK"
+          target="_blank" rel="noopener noreferrer"
+          aria-label="Andromeda YouTube">
+
+          <img src="https://cdn.simpleicons.org/youtube/05163B"
+            alt="YouTube">
+
+        </a>
+
+        <a href="assets/images/qr.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WeChat Andromeda">
+
+          <img
+            src="https://img.icons8.com/ios-filled/50/071b42/weixing.png"
+            alt="WeChat"
+            width="24"
+            height="24">
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- ========== CTA ========== -->
+  <section class="cta">
+
+    <div class="c">
+
+      <h3>Let's Connect with Andromeda</h3>
+
+      <p>
+        Looking for exhibition information, interested in
+        introducing your products, or need exhibitor details?
+        We are ready to assist you.
+      </p>
+
+      <a class="btn" href="kontak.html">
+        Contact Us →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="ft">
+
+    <div class="c">
+
+      <div class="r">
+
+        <a class="logo" href="index.html">
+          <b>Andromeda</b>
+          <span>Event Enterprise</span>
+        </a>
+
+        <p class="t">
+          Connecting Business Opportunities.
+        </p>
+
+      </div>
+
+      <p class="cp">
+        © 2026 Andromeda Event Enterprise. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+
+    // Mobile Menu
+    const burger = document.getElementById('bg');
+    const nav = document.getElementById('nv');
+
+    burger.addEventListener('click', function () {
+
+      const isOpen = nav.classList.toggle('o');
+
+      burger.setAttribute('aria-expanded', isOpen);
+
+      burger.textContent = isOpen ? '✕' : '☰';
+
+    });
+
+    // Close menu after clicking a link
+    document.querySelectorAll('#nv a').forEach(function (link) {
+
+      link.addEventListener('click', function () {
+
+        nav.classList.remove('o');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.textContent = '☰';
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>

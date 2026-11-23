@@ -1,0 +1,695 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contact | Andromeda Event Enterprise</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #05163B;
+      --gold: #F5C04E;
+      --soft: #F4F5F8;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+      background: #fff;
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .c {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 46px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      height: 70px;
+      background: rgba(5, 22, 59, .96);
+    }
+
+    header .in {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 46px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .logo b {
+      display: block;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .logo span {
+      font-size: 13px;
+    }
+
+    nav {
+      display: flex;
+      gap: 36px;
+      font-size: 12.5px;
+      font-weight: 500;
+    }
+
+    nav a {
+      padding: 6px 0;
+      position: relative;
+    }
+
+    nav a.on {
+      font-weight: 700;
+    }
+
+    nav a.on:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .burger {
+      display: none;
+      background: none;
+      border: 0;
+      color: #fff;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* ===== BUTTON ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 13px;
+      border: 0;
+      border-radius: 99px;
+      padding: 14px 24px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 192, 78, .4);
+    }
+
+    /* ===== BANNER ===== */
+    .banner {
+      background: var(--navy);
+      color: #fff;
+      padding: 130px 0 50px;
+    }
+
+    .banner h1 {
+      font-size: 44px;
+      font-weight: 700;
+    }
+
+    .banner h1 em {
+      font-style: normal;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .banner p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 14px;
+      max-width: 480px;
+    }
+
+    /* ===== CONTACT CONTENT ===== */
+    .main {
+      padding: 50px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .item {
+      background: var(--soft);
+      border-radius: 10px;
+      padding: 16px 20px;
+      border-left: 4px solid var(--gold);
+    }
+
+    .item small {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      opacity: .7;
+      margin-bottom: 4px;
+    }
+
+    .item span {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .item a:hover {
+      color: #b7861e;
+    }
+
+    /* ===== SOCIAL MEDIA ===== */
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .social a {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--soft);
+      border-radius: 50%;
+      transition: .2s;
+    }
+
+    .social a:hover {
+      background: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .social img {
+      width: 21px;
+      height: 21px;
+    }
+
+    /* ===== FORM ===== */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      margin-top: 6px;
+      padding: 12px 14px;
+      font-family: inherit;
+      font-size: 13px;
+      color: var(--navy);
+      border: 1px solid #d5d9e2;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid var(--gold);
+      border-color: var(--gold);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    #note {
+      font-size: 12px;
+      line-height: 1.6;
+      min-height: 16px;
+    }
+
+    /* ===== FOOTER ===== */
+    .ft {
+      background: var(--navy);
+      color: #fff;
+      padding: 20px 0 12px;
+    }
+
+    .ft .r {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .ft .cp {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      font-size: 10px;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 860px) {
+      .c,
+      header .in {
+        padding: 0 22px;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 20px 22px;
+        gap: 18px;
+      }
+
+      nav.o {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      .banner h1 {
+        font-size: 34px;
+      }
+
+      .grid,
+      .row {
+        grid-template-columns: 1fr;
+      }
+
+      .ft .r,
+      .ft .cp {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .banner {
+        padding: 115px 0 42px;
+      }
+
+      .banner h1 {
+        font-size: 30px;
+      }
+
+      .main {
+        padding: 38px 0;
+      }
+
+      h3 {
+        font-size: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="in">
+
+      <a class="logo" href="index.html">
+        <b>Andromeda</b>
+        <span>Event Enterprise</span>
+      </a>
+
+      <nav id="nv">
+        <a href="index.html">Home</a>
+        <a href="pameran.html">Exhibitions</a>
+        <a href="layanan.html">Services</a>
+        <a href="tentangkami.html">About Us</a>
+        <a class="on" href="kontak.html">Contact</a>
+      </nav>
+
+      <button class="burger" id="bg" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- ========== BANNER ========== -->
+  <section class="banner">
+    <div class="c">
+
+      <h1>Contact <em>Us</em></h1>
+
+      <p>
+        Have questions about exhibitions, participant information,
+        or Andromeda's services? Tell us what you need.
+        Our team is ready to assist you.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ========== CONTACT CONTENT ========== -->
+  <section class="main">
+    <div class="c">
+
+      <div class="grid">
+
+        <!-- CONTACT INFORMATION -->
+        <div>
+
+          <h3>Contact Information</h3>
+
+          <div class="info">
+
+            <div class="item">
+              <small>ADDRESS</small>
+              <span>
+                Tajur Halang, Bogor, West Java, Indonesia
+              </span>
+            </div>
+
+            <div class="item">
+              <small>EMAIL</small>
+              <span>
+                <a href="mailto:official.andromedaevent@gmail.com">
+                  official.andromedaevent@gmail.com
+                </a>
+              </span>
+            </div>
+
+            <div class="item">
+              <small>PHONE / WHATSAPP</small>
+              <span>
+                <a href="https://wa.me/6285196411748"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  +62 851-9641-1748
+                </a>
+              </span>
+            </div>
+
+          </div>
+
+          <!-- SOCIAL MEDIA -->
+          <div class="social">
+
+            <a href="https://www.instagram.com/andromedaevent.id/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Andromeda Instagram">
+              <img src="https://cdn.simpleicons.org/instagram/05163B"
+                   alt="Instagram">
+            </a>
+
+            <a href="https://www.tiktok.com/@andromedaevent.id"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Andromeda TikTok">
+              <img src="https://cdn.simpleicons.org/tiktok/05163B"
+                   alt="TikTok">
+            </a>
+
+            <a href="https://youtube.com/@andromedaevententerprise"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Andromeda YouTube">
+              <img src="https://cdn.simpleicons.org/youtube/05163B"
+                   alt="YouTube">
+            </a>
+
+            <a href="assets/images/qr.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WeChat Andromeda">
+
+              <img
+                src="https://img.icons8.com/ios-filled/50/071b42/weixing.png"
+                alt="WeChat"
+                width="24"
+                height="24">
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+        <div>
+
+          <h3>Send Us a Message</h3>
+
+          <form id="fm">
+
+            <div class="row">
+
+              <label>
+                Name
+                <input
+                  type="text"
+                  id="nama"
+                  placeholder="Enter your name"
+                  required>
+              </label>
+
+              <label>
+                Email
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="name@email.com"
+                  required>
+              </label>
+
+            </div>
+
+            <label>
+              Service of Interest
+              <select id="layanan" required>
+
+                <option value="Exhibition Product Introduction">
+                  Exhibition Product Introduction
+                </option>
+
+                <option value="Exhibitor Introduction">
+                  Exhibitor Introduction
+                </option>
+
+                <option value="Exhibitor Information">
+                  Exhibitor Information
+                </option>
+
+                <option value="Exhibition Product Auction">
+                  Exhibition Product Auction
+                </option>
+
+                <option value="General Inquiry">
+                  General Inquiry
+                </option>
+
+              </select>
+            </label>
+
+            <label>
+              Message
+              <textarea
+                id="pesan"
+                placeholder="Write your message or inquiry here..."
+                required></textarea>
+            </label>
+
+            <p id="note" aria-live="polite"></p>
+
+            <button class="btn" type="submit">
+              Send Message →
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="ft">
+
+    <div class="c">
+
+      <div class="r">
+
+        <a class="logo" href="index.html">
+          <b>Andromeda</b>
+          <span>Event Enterprise</span>
+        </a>
+
+      </div>
+
+      <div class="cp">
+        <span>
+          © 2026 Andromeda Event Enterprise. All rights reserved.
+        </span>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+
+    // MOBILE MENU
+    const burger = document.getElementById('bg');
+    const nav = document.getElementById('nv');
+
+    burger.addEventListener('click', function () {
+
+      const isOpen = nav.classList.toggle('o');
+
+      burger.setAttribute('aria-expanded', isOpen);
+      burger.textContent = isOpen ? '✕' : '☰';
+
+    });
+
+
+    // CLOSE MENU AFTER SELECTING A PAGE
+    nav.querySelectorAll('a').forEach(function (link) {
+
+      link.addEventListener('click', function () {
+
+        nav.classList.remove('o');
+
+        burger.setAttribute('aria-expanded', 'false');
+        burger.textContent = '☰';
+
+      });
+
+    });
+
+
+    // SEND MESSAGE THROUGH EMAIL
+    const TUJUAN = 'official.andromedaevent@gmail.com';
+
+    document.getElementById('fm').addEventListener('submit', function (e) {
+
+      e.preventDefault();
+
+      const nama = document.getElementById('nama').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const layanan = document.getElementById('layanan').value;
+      const pesan = document.getElementById('pesan').value.trim();
+
+      if (!nama || !email || !pesan) {
+
+        document.getElementById('note').textContent =
+          'Please complete all fields before submitting.';
+
+        return;
+
+      }
+
+      const subjek = 'Website Inquiry - ' + nama;
+
+      const isi =
+        'Hello Andromeda Event Enterprise,\n\n' +
+        'I would like to contact your team.\n\n' +
+        'Name: ' + nama + '\n' +
+        'Email: ' + email + '\n' +
+        'Service of Interest: ' + layanan + '\n\n' +
+        'Message:\n' + pesan + '\n\n' +
+        'Thank you.';
+
+      const mailto =
+        'mailto:' + TUJUAN +
+        '?subject=' + encodeURIComponent(subjek) +
+        '&body=' + encodeURIComponent(isi);
+
+      document.getElementById('note').textContent =
+        'Opening your email application... Please review your message and click Send.';
+
+      window.location.href = mailto;
+
+    });
+
+  </script>
+
+</body>
+</html>

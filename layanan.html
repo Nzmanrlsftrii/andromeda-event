@@ -1,0 +1,1246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>Services | Andromeda Event Enterprise</title>
+
+  <meta name="description"
+    content="Andromeda Event Enterprise provides product introduction, exhibitor introduction, exhibitor information, and exhibition product auction services.">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #05163B;
+      --gold: #F5C04E;
+      --soft: #F4F5F8;
+      --text: #26334d;
+      --muted: #68748d;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+      background: #fff;
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .c {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 46px;
+    }
+
+    /* ==========================================
+       HEADER
+    ========================================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      height: 70px;
+      background: rgba(5, 22, 59, .97);
+    }
+
+    header .in {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 46px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .logo b {
+      display: block;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .logo span {
+      font-size: 13px;
+    }
+
+    nav {
+      display: flex;
+      gap: 36px;
+      font-size: 12.5px;
+      font-weight: 500;
+    }
+
+    nav a {
+      padding: 6px 0;
+      position: relative;
+    }
+
+    nav a.on {
+      font-weight: 700;
+    }
+
+    nav a.on::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .burger {
+      display: none;
+      background: none;
+      border: 0;
+      color: #fff;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* ==========================================
+       BUTTON
+    ========================================== */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 13px;
+      border: 0;
+      border-radius: 99px;
+      padding: 12px 22px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 192, 78, .3);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, .5);
+      color: #fff;
+      border-radius: 99px;
+      padding: 11px 21px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ==========================================
+       BANNER
+    ========================================== */
+
+    .banner {
+      background: var(--navy);
+      color: #fff;
+      padding: 130px 0 50px;
+    }
+
+    .banner .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .banner h1 {
+      font-size: 44px;
+      font-weight: 700;
+    }
+
+    .banner h1 em {
+      font-style: normal;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .banner p {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-top: 14px;
+      max-width: 600px;
+      color: rgba(255, 255, 255, .85);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .chips a {
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 99px;
+      padding: 9px 18px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .chips a:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ==========================================
+       SECTION
+    ========================================== */
+
+    section.s {
+      padding: 48px 0 16px;
+    }
+
+    .section-head {
+      margin-bottom: 22px;
+    }
+
+    .num {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 800;
+      border-radius: 99px;
+      padding: 5px 13px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .sub {
+      font-size: 13px;
+      line-height: 1.8;
+      margin-top: 7px;
+      max-width: 650px;
+      color: var(--muted);
+    }
+
+    /* ==========================================
+       SERVICE CARDS
+    ========================================== */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .card {
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 3px 15px rgba(5, 22, 59, .09);
+      padding: 22px;
+      border-top: 4px solid var(--gold);
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(5, 22, 59, .13);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: #eef2fc;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 17px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #dfe6fb;
+      color: #0b2a78;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 11px;
+      border-radius: 99px;
+    }
+
+    .card h4 {
+      font-size: 16px;
+      margin: 12px 0 9px;
+      line-height: 1.5;
+    }
+
+    .card p {
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .card .by {
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 14px;
+      color: var(--navy);
+    }
+
+    /* ==========================================
+       EXHIBITOR AVATAR
+    ========================================== */
+
+    .av {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 18px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    /* ==========================================
+       EXHIBITOR INFORMATION
+    ========================================== */
+
+    .jual {
+      margin-top: 22px;
+      background: var(--soft);
+      border-radius: 14px;
+      padding: 30px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .jual-content {
+      max-width: 600px;
+    }
+
+    .jual h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .jual p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .jual ul {
+      list-style: none;
+      margin-top: 14px;
+      font-size: 13px;
+      line-height: 2.1;
+    }
+
+    .jual ul li::before {
+      content: "✓ ";
+      color: #14532d;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    .harga {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .harga b {
+      display: block;
+      font-size: 29px;
+    }
+
+    .harga small {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 13px;
+    }
+
+    /* ==========================================
+       PRODUCT AUCTION
+    ========================================== */
+
+    .tt {
+      margin-top: 22px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 14px;
+      padding: 30px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .tt h3 {
+      font-size: 21px;
+    }
+
+    .tt p {
+      font-size: 13px;
+      line-height: 1.8;
+      margin-top: 8px;
+      max-width: 540px;
+      color: rgba(255, 255, 255, .8);
+    }
+
+    .tt .platform {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .steps {
+      list-style: none;
+      counter-reset: n;
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .steps li {
+      counter-increment: n;
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .steps li::before {
+      content: counter(n);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .steps li b {
+      display: block;
+      color: var(--navy);
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    /* ==========================================
+       CTA
+    ========================================== */
+
+    .cta {
+      margin-top: 55px;
+      background: var(--navy);
+      color: #fff;
+      padding: 42px 0;
+      text-align: center;
+    }
+
+    .cta h3 {
+      font-size: 22px;
+      margin-bottom: 9px;
+    }
+
+    .cta p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, .8);
+      margin-bottom: 20px;
+    }
+
+    /* ==========================================
+       FOOTER
+    ========================================== */
+
+    .ft {
+      background: var(--navy);
+      color: #fff;
+      padding: 22px 0 14px;
+      border-top: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .ft .r {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .ft .cp {
+      margin-top: 14px;
+      font-size: 10px;
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 17px;
+    }
+
+    .social img {
+      width: 23px;
+      height: 23px;
+      filter: brightness(0) invert(1);
+      transition: .2s;
+    }
+
+    .social img:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================
+       RESPONSIVE TABLET
+    ========================================== */
+
+    @media (max-width: 860px) {
+
+      .c,
+      header .in {
+        padding: 0 22px;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 20px 22px;
+        gap: 18px;
+      }
+
+      nav.o {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      .banner h1 {
+        font-size: 36px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .jual,
+      .tt {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .harga {
+        text-align: left;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .ft .r {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    /* ==========================================
+       RESPONSIVE MOBILE
+    ========================================== */
+
+    @media (max-width: 560px) {
+
+      .banner {
+        padding: 115px 0 38px;
+      }
+
+      .banner h1 {
+        font-size: 30px;
+      }
+
+      .banner p {
+        font-size: 13px;
+      }
+
+      .chips {
+        gap: 8px;
+      }
+
+      .chips a {
+        font-size: 11px;
+        padding: 8px 13px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section.s {
+        padding-top: 38px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      .jual,
+      .tt {
+        padding: 24px 20px;
+      }
+
+      .tt h3 {
+        font-size: 19px;
+      }
+
+      .cta h3 {
+        font-size: 19px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================
+       HEADER
+  ========================================== -->
+
+  <header>
+    <div class="in">
+
+      <a class="logo" href="index.html">
+        <b>Andromeda</b>
+        <span>Event Enterprise</span>
+      </a>
+
+      <nav id="nv">
+        <a href="index.html">Home</a>
+        <a href="pameran.html">Exhibitions</a>
+        <a class="on" href="layanan.html">Services</a>
+        <a href="tentangkami.html">About Us</a>
+        <a href="kontak.html">Contact</a>
+      </nav>
+
+      <button class="burger" id="bg" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- ==========================================
+       SERVICES BANNER
+  ========================================== -->
+
+  <section class="banner">
+
+    <div class="c">
+
+      <div class="eyebrow">Andromeda Event Enterprise</div>
+
+      <h1>Our <em>Services</em></h1>
+
+      <p>
+        We provide a range of services to introduce products,
+        showcase exhibitor profiles, provide exhibition information,
+        and organize product auctions.
+        All our services are designed to connect exhibitors
+        with visitors and potential customers.
+      </p>
+
+      <div class="chips">
+
+        <a href="#produk">Product Introduction</a>
+
+        <a href="#peserta">Exhibitor Introduction</a>
+
+        <a href="#informasi">Exhibitor Information</a>
+
+        <a href="#lelang">Product Auction</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="c">
+
+
+    <!-- ==========================================
+         01. PRODUCT INTRODUCTION
+    ========================================== -->
+
+    <section class="s" id="produk">
+
+      <div class="section-head">
+
+        <span class="num">01</span>
+
+        <h2>Exhibition Product Introduction</h2>
+
+        <p class="sub">
+          Helping exhibitors introduce their featured products
+          to visitors through product information, publications,
+          and engaging promotional content.
+        </p>
+
+      </div>
+
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="card-icon">◈</div>
+
+          <span class="tag">Product Information</span>
+
+          <h4>Product Profiles and Descriptions</h4>
+
+          <p>
+            Showcasing product names, descriptions, key features,
+            and other relevant information so visitors can learn
+            more about the products offered by exhibitors.
+          </p>
+
+          <p class="by">Product Introduction</p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">▣</div>
+
+          <span class="tag">Product Visuals</span>
+
+          <h4>Product Photography and Presentation</h4>
+
+          <p>
+            Presenting products through photo and video documentation
+            to make product information more engaging and accessible
+            to potential customers.
+          </p>
+
+          <p class="by">Product Documentation</p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">◎</div>
+
+          <span class="tag">Publication</span>
+
+          <h4>Exhibitor Product Promotion</h4>
+
+          <p>
+            Helping expand product awareness through publications
+            and information sharing with audiences interested
+            in exhibition products.
+          </p>
+
+          <p class="by">Product Publication</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         02. EXHIBITOR INTRODUCTION
+    ========================================== -->
+
+    <section class="s" id="peserta">
+
+      <div class="section-head">
+
+        <span class="num">02</span>
+
+        <h2>Exhibitor Introduction</h2>
+
+        <p class="sub">
+          Providing companies, brands, and business owners
+          with an opportunity to introduce their business identity
+          and the products they showcase at exhibitions.
+        </p>
+
+      </div>
+
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="av">01</div>
+
+          <span class="tag">Company Profile</span>
+
+          <h4>Exhibitor Identity and Profile</h4>
+
+          <p>
+            Presenting information about company names,
+            business categories, and the identities of exhibitors
+            participating in an exhibition.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="av">02</div>
+
+          <span class="tag">Products and Services</span>
+
+          <h4>Business Offerings</h4>
+
+          <p>
+            Introducing products and services offered by exhibitors
+            so visitors can learn about each company's
+            business activities.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="av">03</div>
+
+          <span class="tag">Exhibitor Location</span>
+
+          <h4>Exhibition Booth Information</h4>
+
+          <p>
+            Providing exhibitor locations or booth numbers
+            to help visitors easily find the companies
+            they wish to visit.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         03. EXHIBITOR INFORMATION
+    ========================================== -->
+
+    <section class="s" id="informasi">
+
+      <div class="section-head">
+
+        <span class="num">03</span>
+
+        <h2>Exhibition Participant Information</h2>
+
+        <p class="sub">
+          We provide exhibitor information from exhibitions
+          we have covered to help visitors, business owners,
+          and other parties looking for company references.
+        </p>
+
+      </div>
+
+
+      <div class="jual">
+
+        <div class="jual-content">
+
+          <h3>Exhibitor Information Package</h3>
+
+          <p>
+            Get a collection of exhibitor information in one
+            convenient package. Use it as a reference to discover
+            companies and explore potential business connections.
+          </p>
+
+          <ul>
+
+            <li>Company or exhibitor names</li>
+
+            <li>Booth numbers or stand locations</li>
+
+            <li>Business categories or industries</li>
+
+            <li>Available exhibitor contact information</li>
+
+            <li>Data from exhibitions covered by our team</li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="harga">
+
+          <b>Rp175,000</b>
+
+          <small>per information package</small>
+
+          <a class="btn" href="pameran.html#liputan">
+            View Information Package →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         04. PRODUCT AUCTION
+    ========================================== -->
+
+    <section class="s" id="lelang">
+
+      <div class="section-head">
+
+        <span class="num">04</span>
+
+        <h2>Exhibition Product Auction</h2>
+
+        <p class="sub">
+          Bringing product auction activities to life through
+          TikTok live streams. Visitors can follow the auction
+          and participate by placing bids during the event.
+        </p>
+
+      </div>
+
+
+      <div class="tt">
+
+        <div>
+
+          <div class="platform">LIVE AUCTION</div>
+
+          <h3>Product Auctions Through TikTok Live</h3>
+
+          <p>
+            Discover a variety of products offered through
+            Andromeda's auction activities. Join our live streams
+            to explore the products and participate
+            in the bidding process.
+          </p>
+
+        </div>
+
+        <a class="btn"
+          href="https://www.tiktok.com/@andromedaevent.id"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Visit TikTok →
+
+        </a>
+
+      </div>
+
+
+      <ol class="steps">
+
+        <li>
+
+          <b>Follow Andromeda's Account</b>
+
+          Visit the Andromeda Event Enterprise TikTok account
+          and follow us to stay updated on upcoming
+          auction activities.
+
+        </li>
+
+
+        <li>
+
+          <b>Join the Live Stream</b>
+
+          Watch the products presented during the auction
+          and pay attention to the information
+          and bidding terms.
+
+        </li>
+
+
+        <li>
+
+          <b>Place Your Bid</b>
+
+          Submit your bid through the comment section
+          according to the auction rules. The winner
+          will be contacted after the event ends.
+
+        </li>
+
+      </ol>
+
+    </section>
+
+
+  </div>
+
+
+  <!-- ==========================================
+       CALL TO ACTION
+  ========================================== -->
+
+  <section class="cta">
+
+    <div class="c">
+
+      <h3>Would You Like to Learn More About Our Services?</h3>
+
+      <p>
+        Contact the Andromeda Event Enterprise team for more
+        information about our services and potential collaborations.
+      </p>
+
+      <a class="btn" href="kontak.html">
+        Contact Us →
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer class="ft">
+
+    <div class="c">
+
+      <div class="r">
+
+        <a class="logo" href="index.html">
+
+          <b>Andromeda</b>
+
+          <span>Event Enterprise</span>
+
+        </a>
+
+      </div>
+
+
+      <!-- SOCIAL MEDIA -->
+
+      <div class="social">
+
+        <a
+          href="https://www.instagram.com/andromedaevent.id?jplx=MWt6YWlseWszcmE0OA=="
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Andromeda Instagram">
+
+          <img
+            src="https://cdn.simpleicons.org/instagram/ffffff"
+            alt="Instagram">
+
+        </a>
+
+
+        <a
+          href="https://www.tiktok.com/@andromedaevent.id?_r=1&_t=ZS-9BaInv0zERw"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Andromeda TikTok">
+
+          <img
+            src="https://cdn.simpleicons.org/tiktok/ffffff"
+            alt="TikTok">
+
+        </a>
+
+
+        <a
+          href="https://youtube.com/@andromedaevententerprise?si=kEUsow9o_UEAG-mK"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Andromeda YouTube">
+
+          <img
+            src="https://cdn.simpleicons.org/youtube/ffffff"
+            alt="YouTube">
+
+        </a>
+
+        <a href="assets/images/qr.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WeChat Andromeda">
+
+          <img
+            src="https://img.icons8.com/ios-filled/50/071b42/weixing.png"
+            alt="WeChat"
+            width="24"
+            height="24">
+
+        </a>
+
+      </div>
+
+
+      <p class="cp">
+        © 2026 Andromeda Event Enterprise. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ==========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <script>
+
+    // ==========================================
+    // MOBILE NAVIGATION
+    // ==========================================
+
+    var burger = document.getElementById('bg');
+
+    var nav = document.getElementById('nv');
+
+
+    burger.onclick = function () {
+
+      var isOpen = nav.classList.toggle('o');
+
+      burger.setAttribute('aria-expanded', isOpen);
+
+      burger.textContent = isOpen ? '✕' : '☰';
+
+    };
+
+
+    // Close menu after selecting a page
+
+    document.querySelectorAll('#nv a').forEach(function (link) {
+
+      link.addEventListener('click', function () {
+
+        nav.classList.remove('o');
+
+        burger.setAttribute('aria-expanded', 'false');
+
+        burger.textContent = '☰';
+
+      });
+
+    });
+
+
+    // Close menu when clicking outside navigation
+
+    document.addEventListener('click', function (e) {
+
+      if (
+        !nav.contains(e.target) &&
+        !burger.contains(e.target)
+      ) {
+
+        nav.classList.remove('o');
+
+        burger.setAttribute('aria-expanded', 'false');
+
+        burger.textContent = '☰';
+
+      }
+
+    });
+
+  </script>
+
+</body>
+
+</html>
